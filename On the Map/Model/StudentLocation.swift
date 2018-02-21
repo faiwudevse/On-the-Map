@@ -6,7 +6,7 @@
 //  Copyright © 2017 Fai Wu. All rights reserved.
 //
 
-
+import Foundation
 
 struct StudentLocation {
     
@@ -20,43 +20,78 @@ struct StudentLocation {
 // initilize studentsInfo property
     init?(_ dictionary: [String:AnyObject]) {
         if let uniqueKeyVal = dictionary[Client.JSONBodyKeys.UniqueKey] {
-            uniqueKey =  uniqueKeyVal as! String
+            if !(uniqueKeyVal is NSNull) {
+                uniqueKey =  uniqueKeyVal as! String
+            }
+            else{
+                return nil
+            }
         }else{
             return nil
         }
         
         if let firstNameVal = dictionary[Client.JSONBodyKeys.FirstName] {
-            firstName =  firstNameVal as! String
+            if !(firstNameVal is NSNull) {
+                firstName =  firstNameVal as! String
+            }
+            else {
+                return nil
+            }
         }else{
             return nil
         }
         
         if let lastNameVal = dictionary[Client.JSONBodyKeys.LastName]{
-            lastName = lastNameVal as! String
+            if !(lastNameVal is NSNull) {
+                lastName = lastNameVal as! String
+            }
+            else{
+                return nil
+            }
         }else{
             return nil
         }
         
         if let mapStringVal = dictionary[Client.JSONBodyKeys.MapString] {
-            mapString = mapStringVal as! String
+            if !(mapStringVal is NSNull) {
+                mapString = mapStringVal as! String
+            }
+            else{
+                return nil
+            }
         } else{
             return nil
         }
         
         if let latitudeVal = dictionary[Client.JSONBodyKeys.Latitude] {
-            latitude = latitudeVal as! Double
+            if !(latitudeVal is NSNull) {
+                latitude = latitudeVal as! Double
+            }
+            else{
+                return nil
+            }
         }else{
             return nil
         }
         
         if let longitudeVal = dictionary[Client.JSONBodyKeys.Longitude]{
-            longitude = longitudeVal as! Double
+            if !(longitudeVal is NSNull) {
+                longitude = longitudeVal as! Double
+            }
+            else{
+                return nil
+            }
         }else{
             return nil
         }
         
         if let mediaURLVal = dictionary[Client.JSONBodyKeys.MediaURL] {
-            mediaURL = mediaURLVal as! String
+            if !(mediaURLVal is NSNull) {
+                mediaURL = mediaURLVal as! String
+            }
+            else{
+                return nil
+            }
         }else {
              return nil
         }

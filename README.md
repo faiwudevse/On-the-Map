@@ -1,4 +1,4 @@
-# Udacity IOS Nanodegree Project 3
+# On the Map
 
 Users need to login into their udacity account in this app. It allows them  to post and share link based on their location.
 
